@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Personalized bitHeart Dashboard</title>
+</head>
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>bitHeart</h1>
+        </div>
+        <ul>
+            <li><img src="dashboard (2).png" alt="">&nbsp; <span>Your personalized Dashboard</span> </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                </div>
+                <div class="user">
+                    <a href="#" class="btn">New User? Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h1>2194</h1>
+                        <h3>Beats Per Minute</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="students.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1 id="stepsData">0</h1>
+                        <h3>Number of Steps</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="teachers.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>5</h1>
+                        <h3>Calories</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="schools.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>350000</h1>
+                        <h3>Blood Pressure</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="income.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Health Prediction Model | Heart Prediction Model</h2>
+                    </div>
+                    <div class="dildhadkanedo">
+                        <img src="https://media.tenor.com/91scJf-xrKEAAAAj/emoji-coraz%C3%B3n-humano.gif" alt="Heart GIF">
+                    </div>
+                </div>
+                <div class="new-students">
+                    <div class="title">
+                        <a href="#" class="btn">Use these values to predict your Health Condition</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Profile</th>
+                            <th>Name</th>
+                        </tr>
+                        <tr>
+                            <td><img src="https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg" alt="Profile"></td>
+                            <td>Pratyush Birole</td>
+                            <td><img src="info.png" alt="Info"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg" alt="Profile"></td>
+                            <td>Subhranil Bhattcharya</td>
+                            <td><img src="info.png" alt="Info"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg" alt="Profile"></td>
+                            <td>Ekansh Batra</td>
+                            <td><img src="info.png" alt="Info"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg" alt="Profile"></td>
+                            <td>Dinesh Tyagi</td>
+                            <td><img src="info.png" alt="Info"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var socket = io();
+        socket.on('data', function(data) {
+            console.log(data);
+            document.getElementById('stepsData').innerText = data;
+        });
+    </script>
+</body>
+</html>
